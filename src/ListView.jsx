@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import Button from "@material-ui/core/Button";
+import AddButton from "./AddButton";
 
 const ListView = props => {
   return (
@@ -12,10 +12,7 @@ const ListView = props => {
           </li>
         ))}
       </ul>
-
-      <Link to="/new">
-        <Button variant="fab">New</Button>
-      </Link>
+      <AddButton />
     </div>
   );
 };

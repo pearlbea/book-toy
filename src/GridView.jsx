@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "@reach/router";
-import Button from "@material-ui/core/Button";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import IconButton from "@material-ui/core/IconButton";
+import { Info } from "@material-ui/icons";
+
+import AddButton from "./AddButton";
 
 const GridView = props => (
   <div>
@@ -13,19 +15,21 @@ const GridView = props => (
         <GridListTile key={book.id}>
           <GridListTileBar
             title={book.title}
-            subtitle={<span>by {book.author_first}</span>}
+            subtitle={
+              <span>
+                by {book.author_first} {book.author_last}
+              </span>
+            }
             actionIcon={
-              <IconButton>
-                <Link to={`../${book.id}`}>Info</Link>
+              <IconButton component={Link} to={`../${book.id}`}>
+                <Info />
               </IconButton>
             }
           />
         </GridListTile>
       ))}
     </GridList>
-    <Link to="/new">
-      <Button variant="fab">New</Button>
-    </Link>
+    <AddButton />
   </div>
 );
 
