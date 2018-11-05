@@ -12,9 +12,10 @@ const ListView = props => {
           </li>
         ))}
       </ul>
-      <Button variant="fab" href="/new">
-        New
-      </Button>
+
+      <Link to="/new">
+        <Button variant="fab">New</Button>
+      </Link>
     </div>
   );
 };

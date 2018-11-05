@@ -5,6 +5,7 @@ import BookDetail from "./BookDetail";
 import BookList from "./BookList";
 import GridView from "./GridView";
 import ListView from "./ListView";
+import NewBook from "./NewBook";
 
 import "./App.css";
 
@@ -16,10 +17,18 @@ class App extends Component {
     };
   }
 
-  handleDelete() {
-    // TODO: delete a book
-    console.log("deleted");
-  }
+  handleDelete = bookId => {
+    const index = this.state.books.findIndex(el => String(el.id) === bookId);
+    let editedBooks = this.state.books.slice();
+    editedBooks.splice(index, 1);
+    this.setState({ books: editedBooks });
+  };
+
+  handleSubmit = book => {
+    this.setState(state => {
+      return { books: state.books.concat(book) };
+    });
+  };
 
   render() {
     return (
@@ -33,6 +42,7 @@ class App extends Component {
               books={this.state.books}
               onDelete={this.handleDelete}
             />
+            <NewBook path="new" onSubmit={this.handleSubmit} />
           </BookList>
         </Router>
       </div>
