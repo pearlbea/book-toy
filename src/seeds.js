@@ -1,9 +1,9 @@
 const books = [
   {
     id: 1541417964347,
-    title: "JavaScript: The Good Parts",
-    author_first: "Douglas",
-    author_last: "Crockford"
+    title: "Effective JavaScript",
+    author_first: "David",
+    author_last: "Herman"
   },
   {
     id: 1541418198715,
