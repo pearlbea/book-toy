@@ -67,7 +67,7 @@ class NewBook extends React.Component {
           />
         </div>
         <div>
-          <Button type="submit" value="submit">
+          <Button id="new-book-submit" type="submit" value="submit">
             Submit
           </Button>
         </div>

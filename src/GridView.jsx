@@ -60,6 +60,7 @@ class GridView extends React.Component {
           {this.sortedBooks.map(book => (
             <GridListTile key={book.id} className="grid-card">
               <GridListTileBar
+                className="grid-card-title"
                 title={book.title}
                 subtitle={
                   <span>
@@ -67,7 +68,11 @@ class GridView extends React.Component {
                   </span>
                 }
                 actionIcon={
-                  <IconButton component={Link} to={`../${book.id}`}>
+                  <IconButton
+                    className="info-button"
+                    component={Link}
+                    to={`../${book.id}`}
+                  >
                     <Info />
                   </IconButton>
                 }
