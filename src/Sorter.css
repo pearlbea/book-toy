@@ -1,0 +1,7 @@
+a.sort-button {
+  margin: 0.5em;
+}
+a.active {
+  background-color: #344955;
+  color: #fff;
+}

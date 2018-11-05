@@ -33,36 +33,44 @@ class NewBook extends React.Component {
           navigate("/");
         }}
       >
-        <TextField
-          id="title-input"
-          label="Title"
-          margin="normal"
-          onChange={this.handleChange("title")}
-          required
-          type="text"
-          value={this.state.title}
-        />
-        <TextField
-          id="author-first-input"
-          label="Author First Name"
-          margin="normal"
-          onChange={this.handleChange("author_first")}
-          required
-          type="text"
-          value={this.state.author_first}
-        />
-        <TextField
-          id="author-last-input"
-          label="Author Last Name"
-          margin="normal"
-          onChange={this.handleChange("author_last")}
-          required
-          type="text"
-          value={this.state.author_last}
-        />
-        <Button type="submit" value="submit">
-          Submit
-        </Button>
+        <div>
+          <TextField
+            id="title-input"
+            label="Title"
+            margin="normal"
+            onChange={this.handleChange("title")}
+            required
+            type="text"
+            value={this.state.title}
+          />
+        </div>
+        <div>
+          <TextField
+            id="author-first-input"
+            label="Author First Name"
+            margin="normal"
+            onChange={this.handleChange("author_first")}
+            required
+            type="text"
+            value={this.state.author_first}
+          />
+        </div>
+        <div>
+          <TextField
+            id="author-last-input"
+            label="Author Last Name"
+            margin="normal"
+            onChange={this.handleChange("author_last")}
+            required
+            type="text"
+            value={this.state.author_last}
+          />
+        </div>
+        <div>
+          <Button type="submit" value="submit">
+            Submit
+          </Button>
+        </div>
       </form>
     );
   }
