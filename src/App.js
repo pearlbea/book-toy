@@ -1,19 +1,13 @@
 import React, { Component } from "react";
-import { Router } from "@reach/router";
-
-import BookDetail from "./BookDetail";
 import BookList from "./BookList";
-import GridView from "./GridView";
-import ListView from "./ListView";
-import NewBook from "./NewBook";
-
 import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
+    const initialBooks = this.props.books;
     this.state = {
-      books: props.books
+      books: initialBooks
     };
   }
 
@@ -33,18 +27,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
-          <BookList path="/">
-            <GridView default path="grid" books={this.state.books} />
-            <ListView path="list" books={this.state.books} />
-            <BookDetail
-              path=":id"
-              books={this.state.books}
-              onDelete={this.handleDelete}
-            />
-            <NewBook path="new" onSubmit={this.handleSubmit} />
-          </BookList>
-        </Router>
+        <BookList
+          books={this.state.books}
+          handleSubmit={this.handleSubmit}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   }
