@@ -5,7 +5,7 @@ import { Add } from "@material-ui/icons";
 
 const AddButton = () => {
   return (
-    <Button component={Link} to="/new" variant="fab">
+    <Button component={Link} to="/new" variant="fab" className="add-button">
       <Add />
     </Button>
   );
