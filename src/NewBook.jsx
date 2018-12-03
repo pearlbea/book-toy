@@ -4,15 +4,13 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
 class NewBook extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-      author_first: "",
-      author_last: "",
-      id: Date.now()
-    };
-  }
+  state = {
+    title: "",
+    author_first: "",
+    author_last: "",
+    id: Date.now(),
+    isSaving: false
+  };
 
   handleChange = name => event => {
     this.setState({
@@ -22,6 +20,7 @@ class NewBook extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.setState({ isSaving: true });
     this.props.onSubmit(this.state);
   };
 
@@ -67,7 +66,12 @@ class NewBook extends React.Component {
           />
         </div>
         <div>
-          <Button id="new-book-submit" type="submit" value="submit">
+          <Button
+            id="new-book-submit"
+            type="submit"
+            value="submit"
+            disabled={this.state.isSaving}
+          >
             Submit
           </Button>
         </div>
